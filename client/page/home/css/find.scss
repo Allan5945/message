@@ -1,0 +1,119 @@
+.find {
+  &-step {
+    &-container {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-between;
+      height: 382px;
+    }
+    &-head {
+      font-size: 25px;
+      color: #1890ff;
+      text-align: center;
+      padding: 25px 0;
+    }
+    &-box {
+      display: flex;
+      flex-flow: row nowrap;
+      width: 395px;
+      margin: 30px auto 0;
+      justify-content: space-between;
+      & > div {
+        width: 171px;
+        border: 2px solid #65c4ff;
+        border-radius: 10px;
+        margin: 10px;
+        height: 216px;
+        display: flex;
+        flex-flow: column nowrap;
+        cursor: pointer;
+        &:hover {
+          border: 2px solid #1890ff;
+        }
+        & > img {
+          width: 171px;
+        }
+        & > button {
+          margin: 0 auto;
+          width: 120px;
+        }
+      }
+    }
+    &-information {
+      display: flex;
+      flex-flow: column nowrap;
+      align-items: center;
+      &-name {
+        padding: 20px 0;
+        font-size: 20px;
+      }
+      &-abstract {
+        padding: 0 50px;
+        color: #bababa;
+        width: 450px;
+        height: 85px;
+        overflow: hidden;
+        text-align: center;
+      }
+    }
+    &-module {
+      height: 60px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      padding: 0 50px;
+      flex: 0 0 60px;
+      //align-items: flex-end;
+      align-items: center;
+    }
+  }
+  &-friend {
+    &-box {
+      display: flex;
+      flex-flow: row nowrap;
+      padding: 80px 0;
+      align-items: center;
+      justify-content: center;
+      &-input {
+        width: 300px;
+        border-bottom: 2px solid #BBBBBB;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        height: 50px;
+        outline: none;
+        padding-left: 20px;
+        font-size: 20px;
+        color: #1890ff;
+        &::-webkit-input-placeholder {
+          color: #bababa;
+          font-size:14px;
+        }
+        &:-moz-placeholder {
+          color: #bababa;
+          font-size:14px;
+        }
+        &::-moz-placeholder {
+          color: #bababa;
+          font-size:14px;
+        }
+        &:-ms-input-placeholder {
+          color: #bababa;
+          font-size:14px;
+        }
+      }
+    }
+  }
+}
+
+
+.user {
+  &-mes-operation{
+    &-box {
+      padding: 20px 100px;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-between;
+    }
+  }
+}

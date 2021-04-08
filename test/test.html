@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+    <style>
+        .box {
+            display: flex;
+            flex-flow: row nowrap;
+            width: 800px;
+            margin: 200px auto;
+        }
+        .box-item {
+            height: 400px;
+            flex: 1 1 auto;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="box-item">
+        <input type="text" id="i1">
+        <button id="b1">发送</button>
+        <div id="s1">
+        </div>
+    </div>
+    <div class="box-item">
+        <input type="text" id="i2">
+        <button id="b2">发送</button>
+        <div id="s2"></div>
+    </div>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.12.4/jquery.js"></script>
+<script>
+    let i1 = $('#i1');
+    let b1 = $('#b1');
+    let s1 = $('#s1');
+    //
+    let ws1 = new WebSocket('ws://localhost:4000?tid=c5782a2c3d431fbc5945bb8af3873d3ae8a2a03e:622b3220-d6ee-11ea-8f74-73d83a58cdde');
+    ws1.onopen = function () {
+        ws1.onmessage = function (e) {
+            s1.append(`<div>${e.data}</div>`)
+        };
+        ws1.onclose = function (e) {
+            console.log(e)
+        };
+        b1.click(function () {
+            $.ajax({
+                url: 'http://localhost:4000/bs/chat/send',
+                type: 'post',
+                headers: {
+                    tid: '7d29a0e0e1729c4a3378cd54d16625c2bf49eba2:7238ff80-d6ee-11ea-8f74-73d83a58cdde'
+                },
+                data: {
+                    msg: i1.val(),
+                    receiveId: 1
+                },
+                success(data) {
+                }
+            })
+        });
+    };
+
+
+    let i2 = $('#i2');
+    let b2 = $('#b2');
+    let s2 = $('#s2');
+    let ws2 = new WebSocket('ws://localhost:4000?tid=7d29a0e0e1729c4a3378cd54d16625c2bf49eba2:7238ff80-d6ee-11ea-8f74-73d83a58cdde');
+    ws2.onopen = function () {
+        ws2.onmessage = function (e) {
+            s2.append(`<div>${e.data}</div>`)
+        };
+        ws2.onclose = function (e) {
+        };
+        b2.click(function () {
+            $.ajax({
+                url: 'http://localhost:4000/bs/chatGroup/sendGroup',
+                type: 'post',
+                headers: {
+                    tid: '7d29a0e0e1729c4a3378cd54d16625c2bf49eba2:7238ff80-d6ee-11ea-8f74-73d83a58cdde'
+                },
+                data: {
+                    msg: i2.val(),
+                    groupId: 4
+                },
+                success(data) {
+                }
+            })
+            $.ajax({
+                url: 'http://localhost:4000/bs/user/addFriend',
+                type: 'post',
+                headers: {
+                    tid: '7d29a0e0e1729c4a3378cd54d16625c2bf49eba2:7238ff80-d6ee-11ea-8f74-73d83a58cdde'
+                },
+                data: {
+                    applyId: 7,
+                },
+                success(data) {
+                }
+            })
+        })
+    };
+
+</script>
+</body>
+</html>

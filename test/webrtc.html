@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <canvas></canvas>
+</div>
+<script>
+    const constraints = {
+        'video': true,
+        'audio': true
+    }
+    navigator.mediaDevices.getUserMedia(constraints)
+        .then((stream) => {
+           alert('Got MediaStream:');
+        })
+        .catch((error) => {
+            alert('Error accessing media devices.');
+        });
+
+
+</script>
+</body>
+</html>

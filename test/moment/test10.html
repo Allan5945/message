@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function formatNum (num) {
+        let n = num % 1 === 0;
+        return n ? num : Math.trunc(num) + 1;
+    }
+
+    function f () {
+        let a= 6;
+
+        function f1 () {
+            return a;
+        }
+        function f2 () {
+            a = 7;
+        }
+        return {
+            f1,
+            f2
+        };
+    }
+    // let aa = new f()
+    // console.log(aa.f1())
+    // aa.f2();
+    // console.log(aa.f1())
+    console.log('1'.split(','))
+</script>
+</body>
+</html>

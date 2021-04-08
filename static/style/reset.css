@@ -1,0 +1,103 @@
+/*主要文字颜色，其他颜色自己覆盖掉*/
+html, body, div, ul, li, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ol, form, input, textarea, th, td, select {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: #605e7c;
+}
+
+a:link{
+    text-decoration:none;
+}
+a:visited{
+    text-decoration:none;
+}
+a:hover{
+    text-decoration:none;
+}
+a:active{
+    text-decoration:none;
+}
+
+/*去掉a标签默认样式*/
+a{
+    text-decoration:none;
+    color:#605E7C;
+}
+/*输入框laceholder 颜色*/
+::-webkit-input-placeholder {
+    color: rgba(96, 94, 124, .4);
+}
+
+::-moz-placeholder {
+    color: rgba(96, 94, 124, .4);
+}
+
+:-ms-input-placeholder {
+    color: rgba(96, 94, 124, .4);
+}
+.popup, .popup-x1 {
+    opacity: 1;
+    background-color: #fff;
+    box-shadow: 0 5px 11px rgba(85,85,85,.1);
+}
+/*屏蔽复制*/
+.user-select{
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+
+/*滚动条样式  -start*/
+::-webkit-scrollbar { /*滚动条整体部分，其中的属性有width,height,background,border等（就和一个块级元素一样）（位置1）*/
+    width: 7px;
+    height: 7px;
+}
+
+/*外层轨道，可以用display:none让其不显示，也可以添加背景图片，颜色改变显示效果（位置3）*/
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/*内层轨道，滚动条中间部分（位置4）*/
+::-webkit-scrollbar-track-piece {
+    background: transparent;
+}
+
+/*滚动条里面可以拖动的那部分（位置5）*/
+::-webkit-scrollbar-thumb {
+    background: rgba(216,216,216,.5);
+    border-radius: 4px;
+}
+
+/*边角（位置6）*/
+::-webkit-scrollbar-corner{
+    background: #82AFFF;
+}
+/*定义右下角拖动块的样式（位置7）*/
+::-webkit-scrollbar-resizer {
+    background: transparent;
+}
+
+*{
+    scrollbar-arrow-color: #f4ae21; /**//*三角箭头的颜色*/
+    scrollbar-face-color: #333; /**//*立体滚动条的颜色*/
+    scrollbar-3dlight-color: #666; /**//*立体滚动条亮边的颜色*/
+    scrollbar-highlight-color: #666; /**//*滚动条空白部分的颜色*/
+    scrollbar-shadow-color: #999; /**//*立体滚动条阴影的颜色*/
+    scrollbar-darkshadow-color: #666; /**//*立体滚动条强阴影的颜色*/
+    scrollbar-track-color: #666; /**//*立体滚动条背景颜色*/
+    scrollbar-base-color: #f8f8f8; /**//*滚动条的基本颜色*/
+}
+
+/*去除input标签type为number的箭头*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+input{
+    -moz-appearance:textfield;
+}
+

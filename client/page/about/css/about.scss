@@ -1,0 +1,15 @@
+.box-content {
+  background: linear-gradient(to right, #2d80ff, #8d26fe);
+  width: 100%;
+  height: 100%;
+}
+.box {
+  position: fixed;
+  top: 30%;
+  right: 50px;
+  width: 430px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 4px 4px 6px #757373;
+  padding: 20px 32px 0 32px;
+}
